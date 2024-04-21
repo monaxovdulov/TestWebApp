@@ -1,0 +1,74 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+
+#gameArea {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#square {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow; /* яркий цвет текста */
+    font-family: Arial, sans-serif; /* стиль шрифта */
+    font-size: 14px; /* размер шрифта */
+    user-select: none;
+    cursor: pointer;
+    transition: transform 100ms ease; /* анимация изменения размера */
+}
+
+#square:active {
+    transform: scale(0.9); /* уменьшаем размер при активации (нажатии) */
+}
+
+#square.glowing {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+
+
+
+@keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 5px #9E9E9E, 0 0 10px #9E9E9E, 0 0 15px #E60073, 0 0 20px #E60073, 0 0 25px #E60073, 0 0 30px #E60073, 0 0 35px #E60073;
+    }
+    50% {
+      box-shadow: 0 0 10px #9E9E9E, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700, 0 0 60px #FFD700, 0 0 70px #FFD700;
+    }
+  }
+  
+/* Стили для квадратов */
+.red {
+    background-color: rgba(255, 99, 71, 0.5); 
+}
+
+.green {
+    background-color: rgba(50, 205, 50, 0.5); 
+}
+
+.blue {
+    background-color: rgba(0, 191, 255, 0.5); 
+}
+
